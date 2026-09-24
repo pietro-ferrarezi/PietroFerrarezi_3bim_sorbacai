@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorbaçaí - Cliente</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/cliente.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <section>
+        <img src="/images/icon.png" />
+        <h1>Sorbaçaí</h1>
+      </section>
+      <nav>
+        <h2>Faça seu pedido</h2>
+        <a href="/cliente/carrinho" class="botao-menu"><i class="fa-solid fa-cart-shopping"></i></a>
+      </nav>
+      
+    </header>
+
+    <main>
+      <!-- Seção dos cards -->
+      <section class="cards"></section>
+
+      <!-- Modal de complementos/confirmar pedido -->
+      <dialog class="modal">
+        <button class="fechar" onclick="fecharModal()">&times;</button>
+
+        <div class="modal-body">
+          <section class="esquerda">
+            <img class="modal-produto-imagem" />
+
+            <div class="modal-info">
+              <h2 class="modal-produto-nome"></h2>
+
+              <p class="modal-produto-descricao"></p>
+
+              <p class="modal-produto-preco"></p>
+            </div>
+          </section>
+
+          <section class="direita">
+            <h3>Complementos</h3>
+
+            <div class="complementos"></div>
+
+            <div class="botoes">
+              <button class="secondary-button" onclick="fecharModal()">Cancelar</button>
+
+              <button class="primary-button" onclick="confirmarAdd()">
+                Adicionar ao carrinho
+              </button>
+            </div>
+          </section>
+        </div>
+      </dialog>
+
+      <div role="alert" aria-live="assertive" class="aviso-caixa" id="sucesso">
+        <p>ADICIONADO!</p>
+      </div>
+
+    </main>
+
+    <footer class="main-footer">Pietro Diosti Ferrarezi - Santxx</footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/estado.js"></script>
+    <script src="/js/cliente.js"></script>
+  </body>
+</html>

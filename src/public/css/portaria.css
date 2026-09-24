@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAF9F6;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: 600px;
+  padding: 35px;
+  border-radius: 20px;
+
+  background: rgba(253, 253, 253, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+
+  text-align: center;
+  color: #333;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: url("/images/icon.png");
+  background-size: cover;
+  filter: drop-shadow(0 0 20px rgba(225, 0, 255, 0.4));
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.footer {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}

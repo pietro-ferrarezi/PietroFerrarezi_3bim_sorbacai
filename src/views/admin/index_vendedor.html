@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorbaçaí - Vendedor</title>
+
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/vendedor.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <section>
+        <img src="/images/icon.png" />
+        <h1>Sorbaçaí</h1>
+      </section>
+      <section>
+        <h2>Acompanhe os pedidos</h2>
+        <a href="/vendedor/registrar_produto" class="botao-menu"><i class="fa-solid fa-clipboard"></i></a>
+      </section>
+    </header>
+
+    <main>
+      <article class="container_pedidos">
+        <h3>Pedidos</h3>
+        <section class="pedidos"></section>
+      </article>
+
+      <div role="alert" aria-live="assertive" class="aviso-caixa" id="sucesso">
+        <p>Pedido concluido!</p>
+      </div>
+    </main>
+
+    <footer class="main-footer">Pietro Diosti Ferrarezi - Santxx</footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/vendedor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/carrinho.css" />
+
+    <!-- Ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <section>
+        <img src="/images/icon.png" />
+        <h1>Sorbaçaí</h1>
+      </section>
+      <nav>
+        <h2>Finalize seu pedido</h2>
+        <a href="/cliente" class="botao-menu"
+          ><i class="fa-solid fa-chevron-left"></i
+        ></a>
+      </nav>
+    </header>
+    <main>
+      <section class="carrinho">
+        <h3>
+          <i class="fa-solid fa-cart-shopping"></i>
+          Seu carrinho
+        </h3>
+
+        <section class="itens"></section>
+
+        <footer>
+          <p>Total: <span id="total">R$0,00</span></p>
+
+          <div class="acoes">
+            <div>
+              <button class="secondary-button" onclick="esvaziarCarrinho()">
+                Esvaziar
+              </button>
+
+              <button class="primary-button" onclick="finalizarPedido()">
+                Finalizar Pedido
+              </button>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+      <div class="aviso-caixa" id="sucesso">
+        <p>Pedido Finalizado!</p>
+      </div>
+      <div class="aviso-caixa erro" id="erro">
+        <p>Nao há produtos!</p>
+      </div>
+    </main>
+
+    <footer class="main-footer">Pietro Diosti Ferrarezi - Santxx</footer>
+
+    <script src="/js/estado.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/carrinho.js"></script>
+  </body>
+</html>
