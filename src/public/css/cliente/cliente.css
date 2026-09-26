@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+
+/* ==========================================================================
+   cliente.css — vitrine de produtos e modal de complementos
+   Depende do index.css (variáveis, base e botões).
+
+   Blocos: .produto-card, .modal, .complemento
+   ========================================================================== */
+
+
+/* ---------- Grade de cards ---------- */
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+
+/* ---------- Card de produto ----------
+   <article class="produto-card">
+     <figure class="produto-card__figura">
+       <img class="produto-card__imagem">
+     </figure>
+     <div class="produto-card__info">
+       <h3 class="produto-card__nome">
+       <p class="produto-card__tamanho">
+       <p class="produto-card__preco">
+       <div class="produto-card__footer"> botão </div>
+     </div>
+   </article> */
+.produto-card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(66, 15, 90, 0.247);
+}
+
+.produto-card:hover .produto-card__imagem {
+  transform: scale(1.05);
+}
+
+.produto-card__figura {
+  margin: 0;
+}
+
+.produto-card__imagem {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.3s ease-out;
+}
+
+.produto-card__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px;
+}
+
+.produto-card__nome {
+  font-size: 1.35rem;
+  font-family: "Google Sans", "Jonesy Capitals", sans-serif;
+}
+
+.produto-card__tamanho {
+  margin: 0.5rem 0;
+  color: var(--text-detail-color);
+}
+
+.produto-card__preco {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--button-primary-background);
+}
+
+.produto-card__footer {
+  margin-top: auto;
+}
+
+
+/* ---------- Modal ----------
+   O <dialog> já vem com position: absolute do navegador,
+   então .modal__fechar pode usar position: absolute sem
+   precisar declarar position: relative aqui. */
+.modal {
+  width: min(900px, 92vw);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.modal__fechar {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.modal__fechar:hover {
+  transform: scale(1.08);
+}
+
+.modal__corpo {
+  display: flex;
+  height: 80vh; /* o .modal tem max-height: 90vh; se aumentar o padding
+                   ou a borda do modal, ajuste este valor também */
+}
+
+.modal__vitrine {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background: #fafafa;
+}
+
+.modal__imagem {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.modal__info {
+  padding: 25px;
+}
+
+.modal__nome {
+  font-size: 2rem;
+}
+
+.modal__descricao {
+  margin: 15px 0;
+  color: var(--text-detail-color);
+  line-height: 1.5;
+}
+
+.modal__preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--button-primary-background);
+}
+
+.modal__complementos-painel {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 25px;
+}
+
+.modal__subtitulo {
+  margin-bottom: 20px;
+}
+
+.modal__complementos {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+  padding-right: 8px;
+  overflow-y: auto;
+}
+
+.modal__complementos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal__complementos::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #c8c8c8;
+}
+
+.modal__botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+/* ---------- Complemento (item dentro do modal) ---------- */
+.complemento {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid var(--button-secondary-background);
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.complemento:hover {
+  border-color: var(--button-primary-background);
+  background: #f8f2ff;
+}
+
+.complemento input {
+  width: 20px;
+  height: 20px;
+}
+
+/* ~ (irmão geral) alcança os dois spans depois do input;
+   + (irmão adjacente) só pegaria o primeiro (o nome) */
+.complemento input:checked ~ span {
+  font-weight: bold;
+}

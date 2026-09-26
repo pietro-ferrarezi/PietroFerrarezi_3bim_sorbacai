@@ -9,4 +9,7 @@ const pool = new Pool({
   password: process.env.DB_PASS
 })
 
-module.exports = pool
+module.exports = {
+  query: (text, params) => {pool.query(text, params)},
+  pool
+}

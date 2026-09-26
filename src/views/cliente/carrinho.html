@@ -1,70 +1,65 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrinho</title>
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/carrinho.css" />
 
-    <!-- Ícones -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="cabecalho">
-      <section>
-        <img src="/images/icon.png" />
-        <h1>Sorbaçaí</h1>
-      </section>
-      <nav>
-        <h2>Finalize seu pedido</h2>
-        <a href="/cliente" class="botao-menu"
-          ><i class="fa-solid fa-chevron-left"></i
-        ></a>
-      </nav>
-    </header>
-    <main>
-      <section class="carrinho">
-        <h3>
-          <i class="fa-solid fa-cart-shopping"></i>
-          Seu carrinho
-        </h3>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho</title>
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/cliente/carrinho.css" />
 
-        <section class="itens"></section>
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 
-        <footer>
-          <p>Total: <span id="total">R$0,00</span></p>
+<body>
+  <header class="cabecalho">
+    <section class="cabecalho__marca">
+      <img class="cabecalho__logo" src="/images/icon.png" alt="" />
+      <h1 class="cabecalho__titulo">Sorbaçaí</h1>
+    </section>
+    <nav class="cabecalho__nav">
+      <h2 class="cabecalho__subtitulo">Finalize seu pedido</h2>
+      <a href="/cliente" class="cabecalho__botao" aria-label="Carrinho">
+        <i class="fa-solid fa-chevron-left"></i>
+      </a>
+    </nav>
+  </header>
 
-          <div class="acoes">
-            <div>
-              <button class="secondary-button" onclick="esvaziarCarrinho()">
-                Esvaziar
-              </button>
+  <main>
+    <section class="carrinho">
+      <h2 class="carrinho__titulo">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        Seu carrinho
+      </h2>
 
-              <button class="primary-button" onclick="finalizarPedido()">
-                Finalizar Pedido
-              </button>
-            </div>
-          </div>
-        </footer>
-      </section>
+      <div class="carrinho__itens"></div>
 
-      <div class="aviso-caixa" id="sucesso">
-        <p>Pedido Finalizado!</p>
-      </div>
-      <div class="aviso-caixa erro" id="erro">
-        <p>Nao há produtos!</p>
-      </div>
-    </main>
+      <footer class="carrinho__rodape">
+        <p class="carrinho__resumo">
+          Total: <span class="carrinho__total" id="total">R$0,00</span>
+        </p>
 
-    <footer class="main-footer">Pietro Diosti Ferrarezi - Santxx</footer>
+        <div class="carrinho__botoes">
+          <button class="botao botao--secundario" onclick="esvaziarCarrinho()">
+            Esvaziar
+          </button>
+          <button class="botao botao--primario" onclick="finalizarPedido()">
+            Finalizar Pedido
+          </button>
+        </div>
+      </footer>
+    </section>
+  </main>
 
-    <script src="/js/estado.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/carrinho.js"></script>
-  </body>
+  <footer class="rodape">
+    <p>&copy; P. D. Ferrarezi - M32 2026</p>
+  </footer>
+
+  <script src="/js/estado.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/cliente/carrinho.js"></script>
+</body>
+
 </html>

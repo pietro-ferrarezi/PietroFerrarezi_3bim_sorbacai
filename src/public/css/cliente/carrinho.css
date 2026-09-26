@@ -1,0 +1,159 @@
+/* ==========================================================================
+   carrinho.css — página do carrinho
+   Depende do index.css (variáveis, base e botões).
+
+   Bloco: .carrinho
+   Elementos: __titulo, __itens, __rodape, __resumo, __total, __botoes
+   ========================================================================== */
+
+
+/* ---------- Cartão do carrinho ---------- */
+.carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90vw;
+  padding: 28px 28px 18px;
+  border: 1px solid rgba(46, 46, 46, 0.12);
+  border-radius: 22px;
+  background: rgba(204, 204, 204, 0.08);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.carrinho__titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+/* ---------- Área da lista (só o container; os itens estão mais abaixo) ---------- */
+.carrinho__itens {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  height: 205px;
+  margin-top: 5px;
+  padding-right: 5px;
+  overflow-y: scroll;
+}
+
+.carrinho__itens::-webkit-scrollbar {
+  width: 7px;
+}
+
+.carrinho__itens::-webkit-scrollbar-thumb {
+  background: rgba(65, 65, 65, 0.25);
+  border-radius: 20px;
+}
+
+
+/* ---------- Rodapé do carrinho: total + botões ---------- */
+.carrinho__rodape {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.carrinho__resumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.carrinho__total {
+  color: #06d6a0;
+}
+
+/* Um elemento só: metade da largura, colado à direita */
+.carrinho__botoes {
+  display: flex;
+  gap: 15px;
+  width: 50%;
+  align-self: flex-end;
+}
+
+/* Em telas estreitas, metade da largura deixa os botões apertados demais */
+@media (max-width: 600px) {
+  .carrinho__botoes {
+    width: 100%;
+  }
+}
+
+
+/* ---------- Item do carrinho ----------
+   Gerado por criarCardItem() no JS.
+   Bloco: .item-carrinho
+   Elementos: __infos, __nome, __complementos, __complemento, __excluir */
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
+  border: 1px solid rgba(37, 37, 37, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.item-carrinho__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+}
+
+.item-carrinho__nome {
+  font-size: 1.1rem;
+}
+
+.item-carrinho__complementos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.item-carrinho__complemento {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(162, 0, 255, 0.11);
+  color: var(--text-detail-color);
+  font-size: 0.89rem;
+}
+
+.item-carrinho__excluir {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin-left: 7px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 77, 109, 0.15);
+  color: #ff4d6d;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.item-carrinho__excluir:hover {
+  background: #ff4d6d;
+  color: white;
+  transform: scale(1.08);
+}
+
+
+/* ---------- Carrinho vazio ---------- */
+.carrinho__vazio {
+  color: var(--text-detail-color);
+}

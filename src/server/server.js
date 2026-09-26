@@ -3,7 +3,8 @@ const path = require("path");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 
-const pool = require("./db");
+
+const {pool} = require("./db");
 
 const PORT = process.env.PORT || 3040;
 
@@ -11,6 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "public/")));
+
+app.use("/cadastrar", require("./routes/cadastros_routes"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "views/portaria.html"));
@@ -35,11 +38,11 @@ app.get("/cliente", (req, res) => {
 });
 
 app.get("/vendedor", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views/admin/index_vendedor.html"));
+  res.sendFile(path.join(__dirname, "..", "views/vendedor/index_vendedor.html"));
 });
 
 app.get("/vendedor/registrar_produto", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views/admin/registrar_produto.html"));
+  res.sendFile(path.join(__dirname, "..", "views/vendedor/registrar_produto.html"));
 });
 
 app.get("/cliente/carrinho", (req, res) => {
@@ -109,6 +112,6 @@ app.get("/infos/pedidos", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server Running! http://localhost:${PORT}`);
 });

@@ -1,75 +1,82 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorbaçaí - Cliente</title>
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/cliente.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </head>
-  <body>
-    <header class="cabecalho">
-      <section>
-        <img src="/images/icon.png" />
-        <h1>Sorbaçaí</h1>
-      </section>
-      <nav>
-        <h2>Faça seu pedido</h2>
-        <a href="/cliente/carrinho" class="botao-menu"><i class="fa-solid fa-cart-shopping"></i></a>
-      </nav>
-      
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbaçaí - Cliente</title>
+  <link rel="icon" href="/images/icon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/cliente/cliente.css" />
 
-    <main>
-      <!-- Seção dos cards -->
-      <section class="cards"></section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 
-      <!-- Modal de complementos/confirmar pedido -->
-      <dialog class="modal">
-        <button class="fechar" onclick="fecharModal()">&times;</button>
+<body>
+  <header class="cabecalho">
+    <section class="cabecalho__marca">
+      <img class="cabecalho__logo" src="/images/icon.png" alt="" />
+      <h1 class="cabecalho__titulo">Sorbaçaí</h1>
+    </section>
+    <nav class="cabecalho__nav">
+      <h2 class="cabecalho__subtitulo">Faça seu pedido</h2>
+      <a href="/cliente/carrinho" class="cabecalho__botao" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    </nav>
+  </header>
 
-        <div class="modal-body">
-          <section class="esquerda">
-            <img class="modal-produto-imagem" />
+  <main>
+    <!-- Seção dos cards -->
+    <section class="cards"></section>
 
-            <div class="modal-info">
-              <h2 class="modal-produto-nome"></h2>
+    <!-- Modal de complementos/confirmar pedido -->
+    <dialog class="modal">
+      <button class="modal__fechar" onclick="fecharModal()">&times;</button>
 
-              <p class="modal-produto-descricao"></p>
+      <div class="modal__corpo">
+        <section class="modal__vitrine">
+          <img class="modal__imagem" />
 
-              <p class="modal-produto-preco"></p>
-            </div>
-          </section>
+          <div class="modal__info">
+            <h2 class="modal__nome"></h2>
 
-          <section class="direita">
-            <h3>Complementos</h3>
+            <p class="modal__descricao"></p>
 
-            <div class="complementos"></div>
+            <p class="modal__preco"></p>
+          </div>
+        </section>
 
-            <div class="botoes">
-              <button class="secondary-button" onclick="fecharModal()">Cancelar</button>
+        <section class="modal__complementos-painel">
+          <h3 class="modal__subtitulo">Complementos</h3>
 
-              <button class="primary-button" onclick="confirmarAdd()">
-                Adicionar ao carrinho
-              </button>
-            </div>
-          </section>
-        </div>
-      </dialog>
+          <div class="modal__complementos"></div>
 
-      <div role="alert" aria-live="assertive" class="aviso-caixa" id="sucesso">
-        <p>ADICIONADO!</p>
+          <div class="modal__botoes">
+            <button class="botao botao--secundario" onclick="fecharModal()">
+              Cancelar
+            </button>
+
+            <button class="botao botao--primario" onclick="confirmarAdd()">
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </section>
       </div>
+    </dialog>
 
-    </main>
+    <div role="alert" aria-live="assertive" class="aviso">
+      <p><span id="mensagemAviso"></span></p>
+    </div>
+  </main>
 
-    <footer class="main-footer">Pietro Diosti Ferrarezi - Santxx</footer>
+  <footer class="rodape">
+    <p>&copy; P. D. Ferrarezi - M32 2026</p>
+  </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/estado.js"></script>
-    <script src="/js/cliente.js"></script>
-  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/estado.js"></script>
+  <script src="/js/cliente/cliente.js"></script>
+</body>
+
 </html>
