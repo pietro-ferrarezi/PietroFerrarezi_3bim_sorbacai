@@ -1,4 +1,3 @@
--- Active: 1789556958774@@127.0.0.1@5432@sistema_acai
 -- Nome do banco de dados: sistema_acai
 
 DROP TABLE IF EXISTS public.itens_pedido_complemento, public.itens_pedido, public.produtos, public.complementos, public.pedidos;
