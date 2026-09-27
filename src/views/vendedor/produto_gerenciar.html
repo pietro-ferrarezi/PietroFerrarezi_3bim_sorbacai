@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorbaçaí - Vendedor</title>
+
+    <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <section class="cabecalho__marca">
+            <img class="cabecalho__logo" src="/images/icon.png" />
+            <h1 class="cabecalho__titulo">Sorbaçaí</h1>
+        </section>
+        <nav class="cabecalho__nav">
+            <h2 class="cabecalho__subtitulo">Controlar produtos</h2>
+            <a href="/gerenciar" class="cabecalho__botao" aria-label="voltar">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="painel">
+            <h2 class="painel__titulo">Gerenciar Produtos</h2>
+
+            <form class="formulario" action="">
+                <fieldset class="formulario__busca">
+                    <legend class="sr-only">Buscar produto por ID</legend>
+
+                    <div class="formulario__campo">
+                        <label for="id">ID: </label>
+                        <input type="number" name="id" id="inp-id" />
+                    </div>
+
+                    <div class="formulario__acoes-topo">
+                        <button type="button" id="btt-buscar" class="botao botao--primario botao--auto" onclick="buscar()">
+                            Buscar
+                        </button>
+                        <button type="button" id="btt-inserir" class="botao botao--secundario botao--auto" style="display: none;" onclick="acaoInserir()">
+                            Adicionar
+                        </button>
+                        <button type="button" id="btt-atualizar" class="botao botao--secundario botao--auto" style="display: none;" onclick="acaoAtualizar()">
+                            Atualizar
+                        </button>
+                        <button type="button" id="btt-excluir" class="botao botao--secundario botao--auto" style="display: none;" onclick="acaoExcluir()">
+                            Excluir
+                        </button>
+                    </div>
+
+                    <p id="log" class="formulario__log" role="status" aria-live="polite"></p>
+                </fieldset>
+
+                <fieldset class="formulario__campos" id="atributos" disabled>
+                    <legend class="formulario__legenda">Informações do Produto</legend>
+
+                    <div class="formulario__grade">
+                        <div class="formulario__campo">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="inp-nome" />
+                        </div>
+
+                        <div class="formulario__campo">
+                            <label for="tamanho">Tamanho</label>
+                            <input type="text" name="tamanho" id="inp-tamanho" />
+                        </div>
+
+                        <div class="formulario__campo">
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" id="inp-descricao"></textarea>
+                        </div>
+
+                        <div class="formulario__campo">
+                            <label for="preco">Preço</label>
+                            <input type="number" name="preco" id="inp-preco" step="0.01" />
+                        </div>
+
+                        <div class="formulario__campo formulario__campo--checkbox">
+                            <input type="checkbox" name="complementos" id="inp-complementos" />
+                            <label for="complementos">Permite complemento?</label>
+                        </div>
+                    </div>
+
+                    <label class="formulario__imagem" for="inp-imagem">
+                        <input class="formulario__imagem-input sr-only" type="file" name="imagem" id="inp-imagem"
+                            accept="image/*" />
+                        <img class="formulario__imagem-preview" src="/images/silhueta_crud.jpeg"
+                        alt="Imagem do produto" id="imagemProduto" />
+                        <span class="formulario__imagem-rotulo">Imagem do produto</span>
+                    </label>
+                </fieldset>
+
+                <div class="formulario__acoes">
+                    <button type="button" id="btt-confirmar" class="botao botao--primario botao--auto" onclick="salvar()" style="display: none;">
+                        Confirmar
+                    </button>
+                    <button type="button" id="btt-cancelar" class="botao botao--secundario botao--auto" onclick="cancelar()" style="display: none;">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; P. D. Ferrarezi - M32 2026</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/vendedor/produto.js"></script>
+</body>
+
+</html>

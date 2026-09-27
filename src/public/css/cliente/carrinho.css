@@ -1,12 +1,3 @@
-/* ==========================================================================
-   carrinho.css — página do carrinho
-   Depende do index.css (variáveis, base e botões).
-
-   Bloco: .carrinho
-   Elementos: __titulo, __itens, __rodape, __resumo, __total, __botoes
-   ========================================================================== */
-
-
 /* ---------- Cartão do carrinho ---------- */
 .carrinho {
   display: flex;

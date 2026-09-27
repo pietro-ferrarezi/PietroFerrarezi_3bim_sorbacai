@@ -65,3 +65,25 @@ Os avisos possuem a classe `.aviso` que define propriadades estilisticas padrõe
 ```
 
 > Utilize a classe `.aviso--erro` (juntamente com `.aviso`) para avisos de erro.
+
+## Formulários
+```html
+   <form class="formulario">
+     <div class="formulario__busca">
+       <div class="formulario__campo formulario__campo--compacto"> ID </div>
+       <div class="formulario__acoes-topo"> botões buscar/inserir/... </div>
+     </div>
+ 
+     <fieldset class="formulario__campos" disabled>
+       <legend class="formulario__legenda">
+       <div class="formulario__grade">
+         <div class="formulario__campo"> label + input </div>
+         ...
+       </div>
+       <label class="formulario__imagem"> ... </label>
+     </fieldset>
+ 
+     <div class="formulario__acoes"> botões confirmar/cancelar </div>
+   </form>
+
+```

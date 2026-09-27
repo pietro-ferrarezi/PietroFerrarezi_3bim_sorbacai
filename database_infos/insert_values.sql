@@ -1,32 +1,32 @@
 TRUNCATE TABLE itens_pedido_complemento, itens_pedido, complementos, pedidos, produtos RESTART IDENTITY CASCADE;
 
-INSERT INTO public.produtos (nome, tamanho, descricao, preco, pode_complementos, imagem) 
+INSERT INTO public.produtos (id_produto, nome, tamanho, descricao, preco, pode_complementos) 
 VALUES
-('Copo Tradicional 300mL', '300mL', 'Açaí cremoso e gelado feito na hora, do jeito que você manda. Escolha seus adicionais e monte a combinação perfeita.', 19.90, true, 'copo300.png'),
-('Copo Tradicional 500mL', '500mL', 'Mais açaí, mais prazer. Cremoso, gelado e do seu jeito — com os adicionais que você amar. O tamanho certo pra saciar de verdade.', 24.90, true, 'copo500.png'),
-('Marmita pra Família', '900mL', 'Açaí cremoso para todo mundo aproveitar. Ideal para compartilhar com a família ou matar aquela vontade enorme. Monte com os adicionais que quiser.', 42.90, true, 'marmita.png'),
-('Shake na Garrafa', '300mL', 'Açaí batido com leite e leite condensado — cremoso, docinho e irresistível. Vem numa garrafa perfeita para levar onde quiser.', 24.90, true, 'shake.png'),
-('Açai Trufado de Chocolate', '1L', 'O sabor inconfundível do açaí em formato de sorvete artesanal. Um pote generoso, perfeito para levar pra casa e repetir quantas vezes quiser.', 45.00, false, 'sorvete.png'),
-('Brownie', '80g', 'Crocante por fora, com uma massa densa, úmida e intensamente chocolatuda por dentro. Um brownie que não decepciona — em nenhuma hora do dia.', 9.00, false, 'brownie.png'),
-('Cookie Americano', '80g', 'Crocante por fora, macio por dentro e recheado com gotas de chocolate nobre que derretem a cada mordida. Simples assim, impossível comer só um.', 9.00, false, 'cookie.png'),
-('Água sem gás', '500mL', 'Água mineral pura e gelada para refrescar na medida certa. O acompanhamento perfeito para qualquer pedido.', 5.00, false, 'agua_s_gas.jpeg'),
-('Água com gás', '500mL', 'Água mineral com aquela borbulha refrescante que faz toda diferença. Gelada e pronta para complementar seu pedido.', 5.00, false, 'agua_c_gas.jpeg'),
-('Coca-Cola', '350mL', 'Gelada do jeito que você gosta. O clássico que combina com tudo.', 7.00, false, 'cocacola.jpeg');
+(1, 'Copo Tradicional 300mL', '300mL', 'Açaí cremoso e gelado feito na hora, do jeito que você manda. Escolha seus adicionais e monte a combinação perfeita.', 19.90, true),
+(2, 'Copo Tradicional 500mL', '500mL', 'Mais açaí, mais prazer. Cremoso, gelado e do seu jeito — com os adicionais que você amar. O tamanho certo pra saciar de verdade.', 24.90, true),
+(3, 'Marmita pra Família', '900mL', 'Açaí cremoso para todo mundo aproveitar. Ideal para compartilhar com a família ou matar aquela vontade enorme. Monte com os adicionais que quiser.', 42.90, true),
+(4, 'Shake na Garrafa', '300mL', 'Açaí batido com leite e leite condensado — cremoso, docinho e irresistível. Vem numa garrafa perfeita para levar onde quiser.', 24.90, true),
+(5, 'Açai Trufado de Chocolate', '1L', 'O sabor inconfundível do açaí em formato de sorvete artesanal. Um pote generoso, perfeito para levar pra casa e repetir quantas vezes quiser.', 45.00, false),
+(6, 'Brownie', '80g', 'Crocante por fora, com uma massa densa, úmida e intensamente chocolatuda por dentro. Um brownie que não decepciona — em nenhuma hora do dia.', 9.00, false),
+(7, 'Cookie Americano', '80g', 'Crocante por fora, macio por dentro e recheado com gotas de chocolate nobre que derretem a cada mordida. Simples assim, impossível comer só um.', 9.00, false),
+(8, 'Água sem gás', '500mL', 'Água mineral pura e gelada para refrescar na medida certa. O acompanhamento perfeito para qualquer pedido.', 5.00, false),
+(9, 'Água com gás', '500mL', 'Água mineral com aquela borbulha refrescante que faz toda diferença. Gelada e pronta para complementar seu pedido.', 5.00, false),
+(10, 'Coca-Cola', '350mL', 'Gelada do jeito que você gosta. O clássico que combina com tudo.', 7.00, false);
 
-INSERT INTO public.complementos (nome, preco)
+INSERT INTO public.complementos (id_complemento, nome, preco)
 VALUES
-('Granola', 2.00),
-('Paçoca', 2.00),
-('Morango', 3.00),
-('Leite em pó', 2.00),
-('Leite condensado', 2.00),
-('Uva', 3.00),
-('Ovomaltine', 2.00),
-('Creme de avelã', 4.00),
-('Creme de ninho', 4.00),
-('Creme de morango', 4.00),
-('Chocolate em pó', 2.00),
-('Banana', 3.00);
+(1, 'Granola', 2.00),
+(2, 'Paçoca', 2.00),
+(3, 'Morango', 3.00),
+(4, 'Leite em pó', 2.00),
+(5, 'Leite condensado', 2.00),
+(6, 'Uva', 3.00),
+(7, 'Ovomaltine', 2.00),
+(8, 'Creme de avelã', 4.00),
+(9, 'Creme de ninho', 4.00),
+(10, 'Creme de morango', 4.00),
+(11, 'Chocolate em pó', 2.00),
+(12, 'Banana', 3.00);
 
 INSERT INTO public.pedidos (nome_cliente, preco_total, data)
 VALUES

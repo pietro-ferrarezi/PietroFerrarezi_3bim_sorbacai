@@ -10,19 +10,11 @@ const modalComplementosEl = document.querySelector(".modal__complementos");
 // - Busca e salva as informações dos produtos e dos complementos
 // - Renderiza os cards dos produtos
 window.onload = async () => {
-  await buscarInformacoesDaAPI();
+  const dados = await buscarInformacoesDaAPI();
+  estado.produtos = dados[0]
+  estado.complementos = dados[1]
   renderizarCardProdutos();
 };
-
-async function buscarInformacoesDaAPI() {
-  const fetchProdutos = await fetch(`${API_BASE_URL}/infos/produtos`);
-  const produtos = await fetchProdutos.json();
-  estado.produtos = produtos.dados;
-
-  const fetchComplementos = await fetch(`${API_BASE_URL}/infos/complementos`);
-  const complementos = await fetchComplementos.json();
-  estado.complementos = complementos.dados;
-}
 
 // Renderiza um card novo para cada produto
 function renderizarCardProdutos() {
@@ -41,7 +33,7 @@ function criarCard(produto) {
 
   const imagem = document.createElement("img");
   imagem.classList.add("produto-card__imagem");
-  imagem.src = `/images/produtos/${produto.imagem}`;
+  imagem.src = `/images/produtos/${produto.id_produto}.png`;
   imagem.alt = produto.nome;
 
   figure.append(imagem);
@@ -107,7 +99,7 @@ function adicionar(produto) {
 
 // Preenche o modal com as informações do produto e a lista de complementos
 function preencherModal() {
-  modalImagemEl.src = `/images/produtos/${estado.produtoSelecionado.imagem}`;
+  modalImagemEl.src = `/images/produtos/${estado.produtoSelecionado.id_produto}.png`;
   modalNomeEl.textContent = estado.produtoSelecionado.nome;
   modalDescricaoEl.textContent = estado.produtoSelecionado.descricao;
   atualizarDisplayPreco();

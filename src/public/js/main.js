@@ -31,3 +31,22 @@ function gerarAviso() {
 
   return {aviso: div, mensagemSpan: span}
 }
+
+async function buscarInformacoesDaAPI() {
+  let produtos = await buscarDadosProdutos()
+  let complementos = await buscarDadosComplementos()
+
+  return [produtos, complementos]
+}
+
+async function buscarDadosProdutos() {
+  const fetchProdutos = await fetch(`${API_BASE_URL}/infos/produtos`);
+  const produtos = await fetchProdutos.json();
+  return produtos.dados
+}
+
+async function buscarDadosComplementos() {
+  const fetchComplementos = await fetch(`${API_BASE_URL}/infos/complementos`);
+  const complementos = await fetchComplementos.json();
+  return complementos.dados
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorbaçaí - Vendedor</title>
+
+    <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/portaria.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <section class="cabecalho__marca">
+        <img class="cabecalho__logo" src="/images/icon.png" />
+        <h1 class="cabecalho__titulo">Sorbaçaí</h1>
+      </section>
+      <nav class="cabecalho__nav">
+        <h2 class="cabecalho__subtitulo">Administração</h2>
+      <a href="/vendedor" class="cabecalho__botao" aria-label="voltar">
+        <i class="fa-solid fa-chevron-left"></i>
+      </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="acesso">
+        <h1 class="acesso__titulo"><i class="fa-solid fa-gear"></i> Gerenciar</h1>
+        <p class="acesso__texto">
+          <strong>Escolha o que deseja administrar</strong>
+        </p>
+
+        <a class="botao botao--especial" href="/redirect?tipo=g_produto">
+          <i class="fa-solid fa-box"></i>
+          Produtos
+        </a>
+
+        <a class="botao botao--especial" href="/redirect?tipo=g_complemento">
+          <i class="fa-solid fa-utensils"></i>
+          Complementos
+        </a>
+
+        <footer class="acesso__rodape">Sistema interno • Sorbaçaí</footer>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>&copy; P. D. Ferrarezi - M32 2026</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

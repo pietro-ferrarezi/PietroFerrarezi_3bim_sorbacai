@@ -1,16 +1,3 @@
-/* ==========================================================================
-   index.css — estilos compartilhados por TODAS as páginas
-
-   Regra do arquivo: só entra aqui o que é usado em 2 ou mais páginas.
-   Estilo de uma página só vai no CSS da própria página.
-
-   Ordem: variáveis, fontes, base, botões, aviso, cabeçalho, rodapé.
-
-   Nomes: classes em português, no padrão BEM
-     .bloco   .bloco__elemento   .bloco--variacao
-   ========================================================================== */
-
-
 /* ---------- Variáveis ---------- */
 :root {
   --gradient-main: linear-gradient(135deg, #891abd, #a521e2);
@@ -25,6 +12,8 @@
   --button-secondary-background: #ececec;
   --button-secondary-background-hover: #d8d8d8;
   --button-special-background: var(--gradient-main);
+
+  --input-background: #f5f5f5;
 
   --notice-background: #5500a5;
   --notice-error-background: rgb(255, 75, 51);
@@ -155,6 +144,14 @@ textarea {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Para botões que ficam em fileira */
+.botao--auto {
+  width: auto;
+}
+
+
+
+
 
 /* ---------- Aviso (toast) ----------
    Começa escondido; o JS mostra e esconde.
@@ -249,3 +246,263 @@ textarea {
   color: var(--text-detail-color);
   box-shadow: -3px 0 10px rgba(75, 75, 75, 0.178);
 }
+
+/* ----------- Cartão de acesso entre paginas ----------- */
+.acesso {
+  width: min(600px, 100% - 2rem); /* nunca passa da tela em celulares */
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(253, 253, 253, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.acesso__logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: url("/images/icon.png");
+  background-size: cover;
+  filter: drop-shadow(0 0 20px rgba(225, 0, 255, 0.4));
+}
+
+.acesso__titulo {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+
+.acesso__texto {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: var(--text-detail-color);
+}
+
+.acesso__rodape {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: var(--text-detail-color);
+}
+
+/* ---------- Painel (o cartão branco que envolve tudo) ---------- */
+.painel {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 5vh;
+  padding: 2%;
+  padding-top: 1%;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(66, 66, 66, 0.288);
+}
+
+.painel__titulo {
+  margin-bottom: 4vh;
+  font-size: 2rem;
+}
+
+.painel__lista {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4vw;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: var(--content-background);
+  box-shadow: inset 0 2px 5px rgba(27, 27, 27, 0.151);
+}
+
+/* ------------------ Formulário ------------------- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+ 
+.formulario__busca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid var(--button-secondary-background);
+}
+ 
+.formulario__acoes-topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+ 
+/* Fieldset já vem com borda e espaçamento do navegador;
+   zeramos aqui porque quem organiza o espaço é a .formulario__grade. */
+.formulario__campos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid var(--button-secondary-background);
+}
+ 
+/* Reforça visualmente o disabled: os campos ficam claramente
+   "apagados" até o usuário clicar em Buscar/Adicionar. */
+.formulario__campos:disabled {
+  opacity: 0.5;
+}
+ 
+.formulario__legenda {
+  margin-bottom: 16px;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+ 
+.formulario__grade {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  gap: 16px 24px;
+  margin-bottom: 20px;
+  max-width: 50%;
+}
+ 
+.formulario__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 30%;
+}
+ 
+.formulario__campo--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+ 
+.formulario__campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-detail-color);
+}
+ 
+.formulario__campo input[type="text"],
+.formulario__campo input[type="number"],
+.formulario__campo textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--button-secondary-background);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  background-color: var(--input-background);
+}
+ 
+.formulario__campo input:focus,
+.formulario__campo textarea:focus {
+  outline: none;
+  border-color: var(--button-primary-background);
+}
+ 
+.formulario__campo textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.formulario input .desabilitado {
+  cursor: not-allowed;
+}
+ 
+.formulario__campo--checkbox input {
+  width: 20px;
+  height: 20px;
+  background-color: var(--button-primary-background);
+  accent-color: var(--button-primary-background);
+}
+ 
+/* Área da imagem: como o <input type="file"> fica dentro do <label>,
+   clicar na imagem já abre o seletor de arquivo, sem precisar de JS. */
+.formulario__imagem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 3;
+}
+ 
+.formulario__imagem-rotulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-detail-color);
+}
+ 
+.formulario__imagem-preview {
+  width: 55%;
+  max-width: 250px;
+  height: 55%;
+  max-height: 250px;
+  border: 1px dashed var(--button-secondary-background);
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  transition: border-color 0.2s;
+}
+ 
+.formulario__imagem:hover .formulario__imagem-preview {
+  border-color: var(--button-primary-background);
+}
+ 
+.formulario__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.formulario__log {
+    display: none;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.formulario__log--erro {
+    display: block;
+    background-color: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c6cb;
+}
+
+.formulario__log--sucesso {
+    display: block;
+    background-color: #e6f4ea;
+    color: #1e7e34;
+    border: 1px solid #c3e6cb;
+}
+.formulario__log--info {
+    display: block;
+    background-color: #e8f0fe;
+    color: #1a56c4;
+    border: 1px solid #b3d1fc;
+}
+
+/* Esconde visualmente mas mantém acessível a leitores de tela  */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }

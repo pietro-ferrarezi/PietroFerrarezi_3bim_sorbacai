@@ -3,17 +3,16 @@
 DROP TABLE IF EXISTS public.itens_pedido_complemento, public.itens_pedido, public.produtos, public.complementos, public.pedidos;
 
 CREATE TABLE public.produtos (
-  id_produto SERIAL PRIMARY KEY,
+  id_produto INT PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
   tamanho VARCHAR(50),
   descricao VARCHAR(500),
   preco DECIMAL(5,2) NOT NULL,
-  pode_complementos BOOLEAN NOT NULL DEFAULT FALSE,
-  imagem VARCHAR(50) NOT NULL
+  pode_complementos BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE public.complementos (
-  id_complemento SERIAL PRIMARY KEY,
+  id_complemento INT PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
   preco DECIMAL(5,2) NOT NULL
 );

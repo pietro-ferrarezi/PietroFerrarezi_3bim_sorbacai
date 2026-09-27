@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
-/* ==========================================================================
-   cliente.css — vitrine de produtos e modal de complementos
-   Depende do index.css (variáveis, base e botões).
-
-   Blocos: .produto-card, .modal, .complemento
-   ========================================================================== */
-
-
 /* ---------- Grade de cards ---------- */
 .cards {
   display: flex;

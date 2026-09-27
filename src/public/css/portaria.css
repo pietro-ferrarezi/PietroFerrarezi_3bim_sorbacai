@@ -1,54 +1,6 @@
-/* ==========================================================================
-   portaria.css — tela de acesso (portaria)
-   Depende do index.css (variáveis, base e botões).
-
-   Bloco: .acesso
-   Elementos: __logo, __titulo, __texto, __rodape
-   ========================================================================== */
-
-
 /* Centraliza o cartão na tela.
    O body já é flex em coluna (index.css): aqui só falta centralizar. */
 body {
   justify-content: center;
   align-items: center;
-}
-
-
-/* ---------- Cartão de acesso ---------- */
-.acesso {
-  width: min(600px, 100% - 2rem); /* nunca passa da tela em celulares */
-  padding: 35px;
-  border-radius: 20px;
-  background: rgba(253, 253, 253, 0.24);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  text-align: center;
-}
-
-.acesso__logo {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  background: url("/images/icon.png");
-  background-size: cover;
-  filter: drop-shadow(0 0 20px rgba(225, 0, 255, 0.4));
-}
-
-.acesso__titulo {
-  margin-bottom: 8px;
-  font-size: 1.8rem;
-}
-
-.acesso__texto {
-  margin-bottom: 25px;
-  font-size: 0.9rem;
-  color: var(--text-detail-color);
-}
-
-.acesso__rodape {
-  margin-top: 15px;
-  font-size: 0.75rem;
-  color: var(--text-detail-color);
 }

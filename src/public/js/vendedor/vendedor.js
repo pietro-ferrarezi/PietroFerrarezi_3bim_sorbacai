@@ -1,4 +1,4 @@
-const listaPedidosEl = document.querySelector(".pedidos-painel__lista");
+const listaPedidosEl = document.querySelector(".painel__lista");
 
 let pedidos;
 
@@ -11,7 +11,9 @@ async function buscarPedidos() {
   const response = await fetch(`${API_BASE_URL}/infos/pedidos`);
   const data = await response.json();
 
-  pedidos = data.pedidos;
+  console.log(data)
+
+  pedidos = data.dados;
 }
 
 function renderizarPedidos() {
