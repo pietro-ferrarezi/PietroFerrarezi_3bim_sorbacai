@@ -1,8 +1,8 @@
 # 🍇 Sorbaçaí - Sistema de vendas
 
-Sistema web simulado de uma açaiteria, desenvolvido como projeto escolar. Permite que clientes visualizem o cardápio e simulem pedidos, enquanto vendedores podem acompanhar os pedidos realizados.
+Sistema web simulado de uma açaiteria, desenvolvido como projeto escolar. Permite que clientes visualizem o cardápio e simulem pedidos, enquanto vendedores podem acompanhar os pedidos realizados e adicionar novo produtos.
 
-> O projeto utiliza apenas `SELECT` no banco de dados, conforme requisitos do professor, portanto nenhum dado é de fato inserido ou alterado.
+> Último adicionado: sistema de gerenciamento -> adicione, exclua ou modifique produtos e complementos
 
 ---
 
@@ -10,6 +10,7 @@ Sistema web simulado de uma açaiteria, desenvolvido como projeto escolar. Permi
 
 - 🛍️ **Área do cliente:** visualize os produtos disponíveis e adicione itens ao carrinho
 - 📋 **Área do vendedor:** acompanhe os pedidos feitos pelos clientes
+-    ╰┈➤  gerencie os produtos e complementos
 - 🧾 Simulação do fluxo de pedido de uma açaiteria
 
 ---
@@ -32,10 +33,10 @@ Sistema web simulado de uma açaiteria, desenvolvido como projeto escolar. Permi
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/pietro-ferrarezi/PietroFerrarezi_2bim_sorbacai.git
+git clone https://github.com/pietro-ferrarezi/PietroFerrarezi_3bim_sorbacai.git
 
 # 2. Acesse a pasta do projeto
-cd PietroFerrarezi_2bim_sorbacai
+cd PietroFerrarezi_3bim_sorbacai
 
 # 3. Instale as dependências
 npm install
@@ -70,8 +71,6 @@ package.json
 ---
 
 ## 📝 Observações
-
-- O banco de dados é somente leitura (apenas `SELECT`) conforme requisito do professor
 - O carrinho e os pedidos são simulados, sem persistência real de dados
 
 ---
